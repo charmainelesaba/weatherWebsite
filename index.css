@@ -2,6 +2,33 @@ body{
     background-color: rgb(208, 213, 218);
     font-family: "Poppins", sans-serif;
 }
+hr{
+    border: 0.5px solid rgb(208, 213, 218);
+}
+main{
+    padding: 30px 0;
+}
+h1, h2{
+    margin: 0;
+    font-weight: 700;
+    color: rgb(14, 22, 39);
+}
+h1{
+    font-size: 40px;
+}
+h2{
+    font-size: 39px;
+    margin: 0;
+    padding: 0;
+}
+a{
+    color: rgba(81, 103, 124, 0.89);
+}
+footer{
+    text-align: center;
+    font-size: 13px;
+    color: rgba(0, 0, 0, 0.432);
+}
 .weather-application{
     background-color: rgba(239, 243, 253, 0.726);
     max-width: 600px;
@@ -9,9 +36,6 @@ body{
     padding: 30px;
     box-shadow: 0 30px 50px rgba(65, 50, 100, 0.08);
     border-radius: 16px;
-}
-hr{
-    border: 0.5px solid rgb(208, 213, 218);
 }
 .city-input{
     background-color: rgb(208, 213, 218);
@@ -30,7 +54,30 @@ hr{
     color: rgb(37, 37, 37);
     font-size: 16px;
 }
-footer{
-    text-align: center;
-    font-size: 13px;
+.weather-data{
+    display: flex;
+    justify-content: space-between;
+}
+p{
+    margin-top: 23px;
+}
+.weather-details-emoji{
+    font-size: 30px;
+    margin: 0;
+}
+.weather-details{
+    font-size: 15px;
+    color: rgba(21, 34, 49, 0.651);
+}
+.weather-details-emoji{
+    margin-right: 30px;
+}
+.weather-details-stats{
+    color: rgb(185, 117, 117);
+}
+.weather-details-high{
+    color: rgba(175, 40, 107, 0.815);
+}
+.weather-details-low{
+    color: rgb(84, 153, 243);
 }
