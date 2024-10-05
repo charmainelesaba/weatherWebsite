@@ -75,9 +75,9 @@ p{
 .weather-details-stats{
     color: rgb(185, 117, 117);
 }
-.weather-details-high{
+.weather-details-description{
     color: rgba(175, 40, 107, 0.815);
 }
-.weather-details-low{
+.weather-details-feelslike{
     color: rgb(84, 153, 243);
 }
