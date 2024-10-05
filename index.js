@@ -1,6 +1,6 @@
 function showTemperature(response){
     let temperature = document.querySelector("#weather-details-temp");
-    let actualTemperature = Math.round(response.data.temperature.current);
+    let actualTemperature = `${Math.round(response.data.temperature.current)}℃`;
     
     let cityElement = document.querySelector("#city");
     let currentCity = response.data.city;
@@ -9,18 +9,19 @@ function showTemperature(response){
     let descriptionData = response.data.condition.description;
 
     let otherTemperature = document.querySelector("#weather-details-feelslike");
-    let feelsLike = Math.round(response.data.temperature.feels_like);
+    let feelsLike = `${Math.round(response.data.temperature.feels_like)}℃`;
 
     let cityHumidity = document.querySelector("#weather-details-stats-humidity");
-    let humidity = response.data.temperature.humidity;
+    let humidity = `${response.data.temperature.humidity}%`;
 
     let cityWind = document.querySelector("#weather-details-stats-wind");
-    let wind = Math.round(response.data.wind.speed);
+    let wind = `${Math.round(response.data.wind.speed)}km/hr`;
 
     let cityTime = document.querySelector("#time");
     let date = new Date(response.data.time * 1000);
 
-
+    let weatherEmoji = document.querySelector("#emoji");
+    let icon = `<img src="${response.data.condition.icon_url}" class="weather-details-emoji"/>`;
 
 
     temperature.innerHTML = actualTemperature;
@@ -30,6 +31,7 @@ function showTemperature(response){
     cityHumidity.innerHTML = humidity;
     cityWind.innerHTML = wind;
     cityTime.innerHTML = displayDay(date);
+    weatherEmoji.innerHTML = icon;
 }
 
 function displayDay(date){
