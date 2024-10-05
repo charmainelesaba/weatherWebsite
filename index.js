@@ -5,12 +5,53 @@ function showTemperature(response){
     let cityElement = document.querySelector("#city");
     let currentCity = response.data.city;
 
+    let description = document.querySelector("#weather-details-description");
+    let descriptionData = response.data.condition.description;
 
-    cityElement.innerHTML = currentCity;
+    let otherTemperature = document.querySelector("#weather-details-feelslike");
+    let feelsLike = Math.round(response.data.temperature.feels_like);
+
+    let cityHumidity = document.querySelector("#weather-details-stats-humidity");
+    let humidity = response.data.temperature.humidity;
+
+    let cityWind = document.querySelector("#weather-details-stats-wind");
+    let wind = Math.round(response.data.wind.speed);
+
+    let cityTime = document.querySelector("#time");
+    let date = new Date(response.data.time * 1000);
+
+
+
+
     temperature.innerHTML = actualTemperature;
-    
+    cityElement.innerHTML = currentCity;
+    description.innerHTML = descriptionData;
+    otherTemperature.innerHTML = feelsLike;
+    cityHumidity.innerHTML = humidity;
+    cityWind.innerHTML = wind;
+    cityTime.innerHTML = displayDay(date);
 }
 
+function displayDay(date){
+    let hours = date.getHours();
+    let minutes = date.getMinutes();
+    let days = [
+        "Sunday",
+        "Monday",
+        "Tuesday",
+        "Wednesday",
+        "Thursday",
+        "Friday",
+        "Saturday"
+    ];
+
+    if (minutes < 10){
+        minutes = `0${minutes}`;
+    }
+
+    let day = days[date.getDay()];
+    return `${day} ${hours}:${minutes}`;
+}
 
 function lookUpCity (city){
     let apiKey = "7f8c32d332f4bf01b7d20t129od1ca44";
