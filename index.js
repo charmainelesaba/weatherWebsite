@@ -1,9 +1,9 @@
-function showCityWeather(event){
+function changeCity(event){
     event.preventDefault();
     let searchInput = document.querySelector("#city-input");
     let cityElement = document.querySelector("#city");
-    cityElement.innerHTML = searchInput.ariaValueMax;
+    let currentCity = searchInput.value;
+    cityElement.innerHTML = currentCity;
 }
-
-let searchFormElement =  document.querySelector("#search-form");
-searchFormElement.addEventListener("submit", showCityWeather);
+let showCity = document.querySelector("#search-form");
+showCity.addEventListener("submit", changeCity);
