@@ -25,26 +25,27 @@
         <main>
             <div class="weather-data">
                 <div>
-                    <h1 id="city">Gaborone</h1>
+                    <h1 id="city"></h1>
                     <p class="weather-details">
                         03/10, 14:29
                     <br> Humidity: 
-                    <span class="weather-details-stats">33%</span>, 
+                    <span class="weather-details-stats" id="weather-details-stats-humidity">33%</span>, 
                     Wind: 
-                    <span class="weather-details-stats">23km/hr</span>
+                    <span class="weather-details-stats" id="weather-details-stats-wind">23km/hr</span>
                     </p>
                 </div>
                 <div>
                     <h2>
-                        <div class="weather-details-emoji">☀</div>
-                        <span class="weather-details-temp">12℃</span>
+                        <div class="weather-details-emoji" id="weather-details-emoji">☀</div>
+                        <span class="weather-details-temp" id="weather-details-temp"></span>
+                        <span class="weather-details-unit" >℃</span>
                     </h2>
                     
                     <div class="weather-details">
-                        High: 
-                        <span class="weather-details-high">25℃</span> | 
-                        Low: 
-                        <span class="weather-details-low">12℃</span>
+                        Current: 
+                        <span class="weather-details-current" id="weather-details-current">25℃</span> | 
+                        Feels like: 
+                        <span class="weather-details-feelslike" id="weather-details-feelslike">12℃</span>
                     </div>
                 </div>
     
