@@ -76,9 +76,21 @@ p{
 .weather-details-stats{
     color: rgb(185, 117, 117);
 }
-.weather-details-description{
+.weather-details-description, .weather-forecast-temperature-high{
     color: rgba(175, 40, 107, 0.815);
 }
-.weather-details-feelslike{
+.weather-details-feelslike, .weather-forecast-temperature-low{
     color: rgb(84, 153, 243);
+}
+.weather-forecast{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 40px;
+}
+.weather-forecast-date{
+    text-align: center;
+}
+.weather-forecast-emoji{
+    margin-left: 32px;
+
 }
