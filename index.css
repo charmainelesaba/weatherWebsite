@@ -91,6 +91,9 @@ p{
     text-align: center;
 }
 .weather-forecast-emoji{
-    margin-left: 32px;
+    margin-left: 36px;
 
+}
+.weather-forecast-temperature-high{
+    padding-right: 4px;
 }

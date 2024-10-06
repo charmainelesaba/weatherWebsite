@@ -73,3 +73,71 @@ let showCity = document.querySelector("#search-form");
 showCity.addEventListener("submit", changeCity);
 
 lookUpCity("Gaborone");
+displayForecast();
+
+function displayForecast(){
+    let forecast =  document.querySelector("#forecast");
+
+    let days = [
+        "Monday",
+        "Tuesday",
+        "Wednesday",
+        "Thursday",
+        "Friday"
+    ];
+    
+    let forecastHtml ="";
+
+    days.forEach[function(day){
+        forecastHtml = `
+        <div class="weather-forecast-day">
+            <div class="weather-forecast-date">${day}</div>
+            <div class="weather-forecast-emoji">☀</div>
+            <div class="weather-forecast-temperature">
+               <span class="weather-forecast-temperature-high">20℃</span>|
+               <span class="weather-forecast-temperature-low">10℃</span>
+            </div>
+        </div>
+
+`;
+    }]
+
+
+    
+}
+
+
+
+/*                <div class="weather-forecast-day">
+                    <div class="weather-forecast-date">Tue</div>
+                    <div class="weather-forecast-emoji">☀</div>
+                    <div class="weather-forecast-temperature">
+                       <span class="weather-forecast-temperature-high">23℃</span>|
+                       <span class="weather-forecast-temperature-low">9℃</span>
+                    </div>
+                </div>                
+                <div class="weather-forecast-day">
+                    <div class="weather-forecast-date">Wed</div>
+                    <div class="weather-forecast-emoji">☀</div>
+                    <div class="weather-forecast-temperature">
+                       <span class="weather-forecast-temperature-high">29℃</span>|
+                       <span class="weather-forecast-temperature-low">15℃</span>
+                    </div>
+                </div>                
+                <div class="weather-forecast-day">
+                    <div class="weather-forecast-date">Thur</div>
+                    <div class="weather-forecast-emoji">☀</div>
+                    <div class="weather-forecast-temperature">
+                       <span class="weather-forecast-temperature-high">33℃</span>|
+                       <span class="weather-forecast-temperature-low">13℃</span>
+                    </div>
+                </div>                
+                <div class="weather-forecast-day">
+                    <div class="weather-forecast-date">Fri</div>
+                    <div class="weather-forecast-emoji">☀</div>
+                    <div class="weather-forecast-temperature">
+                       <span class="weather-forecast-temperature-high">38℃</span>|
+                       <span class="weather-forecast-temperature-low">15℃</span>
+                    </div>
+                </div>
+*/
