@@ -50,6 +50,9 @@ function displayDay(date){
     if (minutes < 10){
         minutes = `0${minutes}`;
     }
+    if (hours < 10){
+        hours = `0${hours}`;
+    }
 
     let day = days[date.getDay()];
     return `${day} ${hours}:${minutes}`;
@@ -69,11 +72,6 @@ function changeCity(event){
 
     lookUpCity(searchInput.value);
 }
-let showCity = document.querySelector("#search-form");
-showCity.addEventListener("submit", changeCity);
-
-lookUpCity("Gaborone");
-displayForecast();
 
 function displayForecast(){
     let forecast =  document.querySelector("#forecast");
@@ -86,10 +84,12 @@ function displayForecast(){
         "Friday"
     ];
     
-    let forecastHtml ="";
+   let forecastHtml = "";
 
-    days.forEach[function(day){
-        forecastHtml = `
+    days.forEach(function(day){
+        forecastHtml = 
+        forecastHtml + 
+        `
         <div class="weather-forecast-day">
             <div class="weather-forecast-date">${day}</div>
             <div class="weather-forecast-emoji">☀</div>
@@ -98,13 +98,21 @@ function displayForecast(){
                <span class="weather-forecast-temperature-low">10℃</span>
             </div>
         </div>
-
 `;
-    }]
-
+    })
+forecast.innerHTML = forecastHtml;
 
     
 }
+
+
+
+let showCity = document.querySelector("#search-form");
+showCity.addEventListener("submit", changeCity);
+
+lookUpCity("Gaborone");
+displayForecast();
+
 
 
 
