@@ -32,6 +32,8 @@ function showTemperature(response){
     cityWind.innerHTML = wind;
     cityTime.innerHTML = displayDay(date);
     weatherEmoji.innerHTML = icon;
+
+    getForecastData(response.data.city);
 }
 
 function displayDay(date){
@@ -73,32 +75,55 @@ function changeCity(event){
     lookUpCity(searchInput.value);
 }
 
-function displayForecast(){
+function formatForecastDay(timestamp){
+    let date = new Date(timestamp * 1000);
+    let days = [
+        "Sun",
+        "Mon",
+        "Tue",
+        "Wed",
+        "Thur",
+        "Fri",
+        "Sat"
+    ];
+
+    return days[date.getDay()];
+}
+
+function getForecastData(city){
+
+    let apiKey = `7f8c32d332f4bf01b7d20t129od1ca44`;
+    let apiUrl = `https://api.shecodes.io/weather/v1/forecast?query=${city}&key=${apiKey}&units=metric`;
+    axios.get(apiUrl).then(displayForecast);
+    console.log(apiUrl);
+}
+
+
+
+function displayForecast(response){
+    console.log(response.data);
     let forecast =  document.querySelector("#forecast");
 
-    let days = [
-        "Monday",
-        "Tuesday",
-        "Wednesday",
-        "Thursday",
-        "Friday"
-    ];
-    
    let forecastHtml = "";
 
-    days.forEach(function(day){
+    response.data.daily.forEach(function(day, index){
+        if (index < 5){
+
+        
         forecastHtml = 
         forecastHtml + 
         `
         <div class="weather-forecast-day">
-            <div class="weather-forecast-date">${day}</div>
-            <div class="weather-forecast-emoji">☀</div>
+            <div class="weather-forecast-date">${formatForecastDay(day.time)}</div>
+            <div >
+                <img src ="${day.condition.icon_url}" class="weather-forecast-emoji"/>
+            </div>
             <div class="weather-forecast-temperature">
-               <span class="weather-forecast-temperature-high">20℃</span>|
-               <span class="weather-forecast-temperature-low">10℃</span>
+               <span class="weather-forecast-temperature-high">${Math.round(day.temperature.maximum)}℃</span>|
+               <span class="weather-forecast-temperature-low">${Math.round(day.temperature.minimum)}℃</span>
             </div>
         </div>
-`;
+`;}
     })
 forecast.innerHTML = forecastHtml;
 
@@ -111,7 +136,8 @@ let showCity = document.querySelector("#search-form");
 showCity.addEventListener("submit", changeCity);
 
 lookUpCity("Gaborone");
-displayForecast();
+
+
 
 
 
